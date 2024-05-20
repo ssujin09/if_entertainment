@@ -1,0 +1,17 @@
+package kr.or.ddit.vo.entertain;
+
+import lombok.Data;
+
+@Data
+public class IRFileAttachVO {
+	
+	private int baNo;
+	private int bfNo;
+	private String baName;
+	private int baSize;
+	private String baFancysize;
+	private String baMime;
+	private String baSavepath;
+	private int baDowncount;
+
+}

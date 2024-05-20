@@ -1,0 +1,2 @@
+- jsp 절대경로 적을 때
+${pageContext.request.contextPath }

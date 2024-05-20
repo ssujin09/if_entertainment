@@ -1,0 +1,119 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<div class="gap inner-bg">
+  <div class="table-styles">
+    
+    <div class="little-heading">
+      <h2>제품리스트</h2>
+    </div>
+    <div class="widget">
+      <table class="prj-tbl striped table-responsive">
+        <thead class="color">
+           <tr class="prodTitle">
+             <th><i class="all-slct"></i></th>
+             <th><em>번호</em></th>
+             <th><em>이미지</em></th>
+             <th><em>제품명</em></th>
+             <th><em>가격</em></th>
+             <th><em>카테고리</em></th>
+             <th><em>진열여부</em></th>
+             <th><em>재고</em></th>
+             <th><em>등록일</em></th>
+             <th><em>상태</em></th>
+           </tr>
+        </thead>
+        <tbody>
+          <tr class="prodList" data-prodNo="1">
+            <td><i class="sngl-slct"></i></td>
+            <td><span>01</span></td>
+            <td><span><img alt="" src=""></span></td>
+            <td><i>FACE YOURSELF</i></td>
+            <td><i>35,000</i></td>
+            <td><i>BTS>ALBUM</i></td>
+            <td><i>진열</i></td>
+            <td><i>50</i></td>
+            <td><i>2024-04-03</i></td>
+            <td><a href="#" title=""><i class="icon-trash"></i></a></td>
+          </tr>
+          <tr class="prodList" data-prodNo="1">
+            <td><i class="sngl-slct"></i></td>
+            <td><span>01</span></td>
+            <td><span><img alt="" src=""></span></td>
+            <td><i>FACE YOURSELF</i></td>
+            <td><i>35,000</i></td>
+            <td><i>BTS>ALBUM</i></td>
+            <td><i>진열</i></td>
+            <td><i>50</i></td>
+            <td><i>2024-04-03</i></td>
+            <td><a href="#" title=""><i class="icon-trash"></i></a></td>
+          </tr>
+          <tr class="prodList" data-prodNo="1">
+            <td><i class="sngl-slct"></i></td>
+            <td><span>01</span></td>
+            <td><span><img alt="" src=""></span></td>
+            <td><i>FACE YOURSELF</i></td>
+            <td><i>35,000</i></td>
+            <td><i>BTS>ALBUM</i></td>
+            <td><i>진열</i></td>
+            <td><i>50</i></td>
+            <td><i>2024-04-03</i></td>
+            <td><a href="#" title=""><i class="icon-trash"></i></a></td>
+          </tr>
+        </tbody> 
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script>
+$(function () {
+	$(".prodList").on("click", function () {
+		alert($(this).attr("data-prodNo"));
+	});
+
+	$('.all-slct').on("click",function(){
+		$(this).toggleClass('active');
+	    $(".sngl-slct").toggleClass('active');
+	});
+	
+	$(".icon-trash").on("click", function() {
+		deleteBoard();
+	});
+	
+	function deleteBoard(seq) {
+	    // 경고창 띄우기
+	    Swal.fire({
+	        title: '글을 삭제하시겠습니까?', 
+	        text: "삭제하시면 다시 복구시킬 수 없습니다.", 
+	        icon: 'warning', 
+	        showCancelButton: true, // 취소 버튼 보이도록 설정
+	        confirmButtonColor: '#3085d6', // 삭제 버튼 색상 설정
+	        cancelButtonColor: '#d33', // 취소 버튼 색상 설정
+	        confirmButtonText: '삭제', // 삭제 버튼 텍스트 설정
+	        cancelButtonText: '취소' // 취소 버튼 텍스트 설정
+	    }).then((result) => {
+	        setTimeout(() => {
+	            Swal.close(); // 일정 시간 후 SweetAlert2 경고창 닫기
+	        }, 2000); // 2000ms(2초) 후에 경고창 닫기
+	        if (result.isConfirmed) { 
+	        	// 삭제 버튼을 눌렀을 때
+	   
+	 
+	            Swal.fire( 
+	                '게시물 삭제 성공!', 
+	                '', 
+	                'success' 
+	            )
+	        } else if (result.dismiss === Swal.DismissReason.cancel) { // 취소 버튼을 눌렀을 때
+	            // "취소" 버튼을 눌렀을 때
+	            Swal.fire( 
+	                '작업이 취소되었습니다.', 
+	                '', 
+	                'info' 
+	            )
+	        }
+	    });
+	};
+});
+</script>

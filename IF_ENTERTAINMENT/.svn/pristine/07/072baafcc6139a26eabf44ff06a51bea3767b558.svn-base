@@ -1,0 +1,59 @@
+package kr.or.ddit.controller.common;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.or.ddit.service.common.IAdminService;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 엔터테인먼트 메인페이지 
+ * @author 홍진영
+ */
+@Controller
+@Slf4j
+public class MainController {
+	
+	@Inject
+	private IAdminService adminService;
+	
+	@RequestMapping(value="/")
+	public String main() {
+		return "index";
+	}
+	
+	@RequestMapping(value="/admin")
+	public String adminMain(Model model) {
+		
+		// 통계 자료들을 담을 맵을 선언
+		Map<String, Object> statMap = new HashMap<String, Object>();
+		
+		// 금일 가입자 수를 조회한다.
+		int todayRegister = adminService.selectTodayRegister();
+		statMap.put("todayRegister", todayRegister);
+		
+		// 어제 가입자 수를 조회한다.
+		int yesterdayRegister = adminService.selectYesterdayRegister();
+		
+		// 어제 대비 오늘 가입자 증감률을 계산
+		double increaseRate = 0.0;
+		if (yesterdayRegister != 0) {
+		    increaseRate = ((double)(todayRegister - yesterdayRegister) / yesterdayRegister) * 100.0;
+		}
+
+		// 증감률을 소수점 둘째 자리까지 반올림
+		increaseRate = Math.round(increaseRate * 100.0) / 100.0;
+		
+		statMap.put("increaseRate", increaseRate);
+		
+		model.addAttribute("statMap", statMap);
+		return "admin/adminMain";
+	}
+	
+}

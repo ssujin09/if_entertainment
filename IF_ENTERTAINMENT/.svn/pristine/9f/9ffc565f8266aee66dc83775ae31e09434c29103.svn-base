@@ -1,0 +1,16 @@
+package kr.or.ddit.service.impl.entertain;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.mapper.entertain.IFinanceMapper;
+import kr.or.ddit.service.entertain.IFinanceService;
+
+@Service
+public class FinanceServiceImpl implements IFinanceService {
+
+	@Inject
+	private IFinanceMapper financeMapper;
+	
+}

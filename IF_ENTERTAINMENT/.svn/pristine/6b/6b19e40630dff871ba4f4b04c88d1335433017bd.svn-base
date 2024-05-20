@@ -1,0 +1,24 @@
+package kr.or.ddit.controller.community;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 마이페이지 컨트롤러
+ * @author 서어진
+ *
+ */
+@Controller
+@Slf4j
+@RequestMapping("/community/mypage")
+public class MypageController {
+	// 1. 마이페이지 조회
+	
+	// 2. 마이페이지 수정
+	// 비밀번호 수정 시 
+	
+//	@@
+	
+}

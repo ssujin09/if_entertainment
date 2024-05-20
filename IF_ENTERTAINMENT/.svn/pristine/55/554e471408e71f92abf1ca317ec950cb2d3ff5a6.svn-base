@@ -1,0 +1,25 @@
+package kr.or.ddit.controller.goods;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 굿즈 조회 컨트롤러
+ * @author 조재훈, 성이수
+ * 조재훈 - 유저가 굿즈샵에서 굿즈를 조회
+ * 성이수 - 관리자가 상품관리 페이지에서 상품리스트를 조회
+ */
+@Controller
+@Slf4j
+@RequestMapping("/goods")
+public class GoodsRetrieveController {
+
+	/*
+	 * 1. 대분류는 아티스트를 선택하여 샵을 들어가면
+	 * 2. 소분류는 앨범, 멤버십, 포토카드 등
+	 * 3. 
+	 */
+	
+}

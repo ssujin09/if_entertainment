@@ -1,0 +1,370 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b0e81bb721b9e121366ca32dad175741&libraries=services"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>Web Admin panel</title>
+<link rel="icon" type="image/png" href="images/fav.png">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/font-awesome.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/themify-icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/line-icons.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/animate.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/color.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css1/responsive.css">
+
+<style type="text/css">
+#genderStyle {
+	height: 51px;
+	width: 410px;
+	background-color: white;
+	margin-top: 20px;
+	display: flex;
+	margin-top: 30px;
+}
+
+#genderStyle_{
+	display: flex;
+}
+
+#genderStyle_ input {
+	font-size: 10px;
+}
+
+/* .gender_icon { */
+/* 	display:inline-block; */
+/* 	font-size: 20px; */
+/* 	margin-left: 20px; */
+/* 	margin-top: 10px; */
+/* 	margin-right: 20px; */
+/* } */
+
+.gender_radio {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.gender_radio .male {
+	margin-right: 150px;
+}
+
+.gender_M, .gender_F {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gender_M i {
+	font-size: 20px;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.gender_F i {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.gender_M span, .gender_F span {
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	
+}
+
+
+#alarmStyle {
+	height: 51px;
+	width: 410px;
+	background-color: white;
+	margin-top: 20px;
+	display: flex;
+	margin-top: 30px;
+}
+
+#alarmStyle_{
+	display: flex;
+}
+
+#alarmStyle_ input {
+	font-size: 10px;
+	margin-left: -30px;
+}
+
+
+.alarm_radio {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.alarm_radio .male {
+	margin-right: 50px;
+}
+
+.alarm_M, .alarm_F {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.alarm_M i {
+	font-size: 20px;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.alarm_F i {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.alarm_M span, .alarm_F span {
+	margin-left: 10px;
+	margin-top: 10px;
+		width: 110px;
+}
+
+.mobile {}
+
+.select-container {
+	display: flex;
+    justify-content: space-between;
+ }
+
+.select-container select {
+  flex: 1; /* 각 select 요소가 동일한 너비를 가지도록 함 */
+
+</style>
+
+</head>
+<body>
+<!-- Start Page Loading -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+<div class="panel-layout">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="admin-lock" style="height: 100%; overflow: auto;"> 
+          <div class="admin-form">
+            <div class="logo"><img src="images/logo2.png" alt=""></div>
+            <h4>Sign Up Account</h4>
+            <span>Please enter your user information</span>
+            
+            <form method="post">
+              <label><i class="fa fa-id-card-o" aria-hidden="true"></i></label>
+              <input type="text" placeholder="user Id">
+              <label><i class="fa fa-user-circle-o"></i></label>
+              <input type="text" placeholder="user Name">
+              <label><i class="fa fa-unlock-alt" aria-hidden="true"></i></label>
+<!--               <input type="text" placeholder="Email Address"> -->
+<!--               <label><i class="fa fa-unlock-alt"></i></label> -->
+              <input type="text" placeholder="Password">
+              <label><i class="fa fa-unlock-alt"></i></label>
+              <input type="text" placeholder="Confirm Password">
+			
+		
+              <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+              <div class="input-group">
+			<input type="text" class="form-control" name="userEmail1" id="userEmail1" 
+			placeholder="email" style="height: 38px;">
+
+					<select class="form-control" name="userEmail2" id="userEmail2" >
+					<option>@naver.com</option>
+					<option>@daum.net</option>
+					<option>@gmail.com</option>
+					<option>@hanmail.com</option>
+					<option>@yahoo.co.kr</option>
+				</select> 
+				
+			</div>
+              <button type="button" class="btn btn-primary" id="mail-Check-Btn">이메일 전송</button>
+              <div class="mail-check-box" style="margin-bottom: 35px;">인증번호 <br/>
+              
+	              <input class="form-control mail-check-input"
+					placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
+              </div>
+			생년월일 <br/>
+			<div class="select-container">
+			    <select id="yearSelect" class="form-control">
+			        <option value="">년</option>
+			    </select>
+			    <select id="monthSelect" class="form-control">
+			        <option value="">월</option>
+			    </select>
+			    <select id="daySelect" class="form-control">
+			        <option value="">일</option>
+			    </select>
+			</div>
+
+
+			              
+              <div id="genderStyle">
+              	<div id="genderStyle_">
+					 <div class="gender_radio">
+					 	<div class="gender_M">
+			            <i class="fa fa-male" aria-hidden="true"></i> 
+					      <span> male</span> 
+					      <input type="radio" class="male" id="memGenderM" name="memGender" value="M" checked="checked">
+					 	</div>
+					 	<div class="gender_F">
+						<i class="fa fa-female" aria-hidden="true"></i>
+					      <span>female</span>  
+					      <input type="radio" id="memGenderF" name="memGender" value="F">
+					 	</div>
+					 </div>
+			     </div>
+              </div>
+			  <br/>
+
+
+
+			<label for="address" style="margin-top: 10px;"><i class="fa fa-address-book" aria-hidden="true" style="position: absolute; bottom: -7px"></i></label>
+			<div class="input-group mb-3" style="width: 330px;">
+				<input type="text" class="form-control" id="memPostCode"
+					name="memPostcode" value="${member.memPostcode }"
+					style="margin-bottom: 20px; height: 51px; margin-top: auto;" placeholder="지번">
+				<button type="button" class="btn btn-secondary btn-flat"
+					onclick="DaumPostcode()" style="margin-bottom: 10px;width: max-content;margin-left: 10px;position: absolute;top: -15px;left: 324px;">우편번호 찾기</button>
+			</div>
+			<label for="address"><i class="fa fa-address-book" aria-hidden="true" style="position: absolute;bottom: 35px;"></i></label>
+			<input type="text" class="form-control" id="memAddress1"
+				name="memAddress1" value="${member.memAddress1 }"
+				placeholder="주소입력" style="margin-top: -40px; height: 51px;"> 
+			<label for="address"><i class="fa fa-address-book" aria-hidden="true"></i></label>	
+			<input type="text" class="form-control" id="memAddress2"
+				name="memAddress2" value="${member.memAddress2 }"
+				placeholder="상세주소를 입력해주세요"
+				style="margin-bottom: 10px; height: 51px;">
+
+
+			  <label class="mobile"><i class="fa fa-mobile" aria-hidden="true" style="font-size: 30px; position: absolute; top: -30px; " ></i></label>
+              <input type="text" placeholder="telNo" style="margin-top: -30px;">
+              
+             <div id="alarmStyle">
+              	<div id="alarmStyle_">
+					 <div class="alarm_radio">
+					 	<div class="alarm_M">
+			            <i class="fa fa-bell-o" aria-hidden="true"></i> 
+					      <span> 동의</span> 
+					      <input type="radio" class="male" id="memGenderM" name="memGender" value="M" checked="checked">
+					 	</div>
+					 	<div class="alarm_F">
+					      <span>비동의</span>  
+					      <input type="radio" id="memGenderF" name="memGender" value="F">
+					 	</div>
+					 </div>
+			     </div>
+              </div>
+			<div class="form-group" style="margin-left: -16px;">
+			    <label for="recaptcha" class="control-label col-sm-2"><span class="rq"></span></label>
+			    <div class="col-sm-6">
+			        <div class="g-recaptcha" data-sitekey="6LcKxUgpAAAAAAN-TGBKRTy8hzXUodck7LrXEUoA"></div>
+			        <span id="recaptchaError" class="rq"></span>
+			    </div>
+			</div>
+
+
+			<input type="checkbox" id="checkbox">
+              <label for="checkbox">I accept the <a href="#" title="">terms & Conditions</a></label>
+              <button type="submit">sign up</button>
+            </form>
+            <span>Already a member? <a href="#" title="">Sign in</a></span> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function DaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+
+            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+
+            // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+            if(data.userSelectedType === 'R'){
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+            }
+
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('memPostCode').value = data.zonecode;
+            document.getElementById("memAddress1").value = addr;
+            // 커서를 상세주소 필드로 이동한다.
+            document.getElementById("memAddress2").focus();
+        }
+    }).open();
+}
+	
+	//년, 월, 일에 대한 옵션을 추가할 수 있는 함수 정의
+	function addOptions(selectElement, start, end) {
+	    for (let i = start; i <= end; i++) {
+	        let option = document.createElement('option');
+	        option.value = i;
+	        option.text = i;
+	        selectElement.appendChild(option);
+	    }
+	}
+	
+	// 년도 옵션 추가
+	let yearSelect = document.getElementById('yearSelect');
+	let currentYear = new Date().getFullYear();
+	addOptions(yearSelect, currentYear - 100, currentYear);
+	
+	// 월 옵션 추가
+	let monthSelect = document.getElementById('monthSelect');
+	for (let i = 1; i <= 12; i++) {
+	    let option = document.createElement('option');
+	    option.value = i;
+	    option.text = i;
+	    monthSelect.appendChild(option);
+	}
+	
+	// 일 옵션 추가
+	let daySelect = document.getElementById('daySelect');
+	for (let i = 1; i <= 31; i++) {
+	    let option = document.createElement('option');
+	    option.value = i;
+	    option.text = i;
+	    daySelect.appendChild(option);
+	}
+
+		
+</script>
+
+<script src="${pageContext.request.contextPath }/resources/js1/jquery.js"></script> 
+<script src="${pageContext.request.contextPath }/resources/js1/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js1/custom.js"></script>
+</body>
+</html>

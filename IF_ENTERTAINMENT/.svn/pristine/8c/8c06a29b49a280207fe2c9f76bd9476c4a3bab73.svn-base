@@ -1,0 +1,6 @@
+package kr.or.ddit.service.common;
+
+public interface IAdminService {
+	public int selectTodayRegister();
+	public int selectYesterdayRegister();
+}

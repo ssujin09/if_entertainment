@@ -1,0 +1,29 @@
+package kr.or.ddit.controller.entertain;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.or.ddit.service.entertain.IIRService;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * IR 행사일정 등록 컨트롤러
+ * @author 서어진
+ *
+ */
+@Controller
+@Slf4j
+@RequestMapping("/entertain/ir")
+public class IREventInsertController {
+
+	@Inject
+	private IIRService IRService;
+	
+	@RequestMapping(value="/test.do", method = RequestMethod.GET)
+	private String aaa () {
+		return "admin/entertain/IRboard";
+	}
+}

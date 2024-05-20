@@ -1,0 +1,26 @@
+package kr.or.ddit.service.impl.common;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.mapper.common.IAdminMapper;
+import kr.or.ddit.service.common.IAdminService;
+
+@Service
+public class AdminServiceImpl implements IAdminService {
+
+	@Inject
+	private IAdminMapper adminMapper;
+	
+	@Override
+	public int selectTodayRegister() {
+		return adminMapper.selectTodayRegister();
+	}
+
+	@Override
+	public int selectYesterdayRegister() {
+		return adminMapper.selectYesterdayRegister();
+	}
+
+}

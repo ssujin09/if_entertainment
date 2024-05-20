@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="create-post detail_title_box">
+		<div class="detail_title">제목 입니두!!! Lorem ipsum dolor sit amet consectetur.</div>
+		<div class="detail_date">2024-03-19</div>
+	</div>
+	<div class="bottom_box">
+		<div class="about-chnl detail_content_box">
+			<div class="detail_content">
+				내용입니두 <br> 
+<!-- 				내용입니두 <br>  -->
+<!-- 				내용입니두 <br>  -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+<!-- 				내용입니두 <br> -->
+			</div>
+		</div>
+		<div class="detail_bottom_line">
+			<div class="detail_button">
+				<div class="detail_left_btn">
+					<a href="#" title="이전" class="main-btn btn_pre">
+						<i class="fa fa-chevron-left" aria-hidden="true"></i>
+					</a> 
+					<a href="#" title="다음" class="main-btn btn_next">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</a>
+				</div>
+				<div class="detail_right_btn">
+					<a href="#" title="목록" class="main-btn go_list" data-ripple="">목록</a>
+					<a href="#" title="오디션지원하기" class="main-btn support" data-ripple="">오디션지원하기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

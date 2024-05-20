@@ -1,0 +1,31 @@
+package kr.or.ddit.service.impl.common;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.controller.common.ServiceResult;
+import kr.or.ddit.mapper.common.ISignMapper;
+import kr.or.ddit.service.common.ISignService;
+import kr.or.ddit.vo.common.UserVO;
+
+@Service
+public class SignServiceImpl implements ISignService {
+ 
+	@Inject
+	private ISignMapper signMapper;
+
+	@Override
+	public ServiceResult idCheck(String userId) {
+		ServiceResult result=null;
+		UserVO member=signMapper.idCheck(userId);
+		if(member==null) {
+			result=ServiceResult.NOTEXIST;
+		}else {
+			result=ServiceResult.EXIST;
+		}
+		
+		return result;
+	}
+	
+}

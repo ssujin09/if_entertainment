@@ -1,0 +1,26 @@
+package kr.or.ddit.controller.entertain;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.or.ddit.service.entertain.IFinanceService;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 재무재표 등록 컨트롤러(관리자)
+ * @author 조재훈
+ */
+@Controller
+@Slf4j
+@RequestMapping("/entertain/finance")
+public class FinancialInsertController {
+	
+	// 관리자가 처음으로 재무재표를 업로드 했을 때에는 테이블에 Insert가 된다.
+	// 기존에 테이블이 있는상태여서 굳이 insert를 넣을까 말까 고민중
+
+	@Inject
+	private IFinanceService financeService;
+
+}

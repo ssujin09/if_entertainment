@@ -1,0 +1,24 @@
+package kr.or.ddit.controller.entertain;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.or.ddit.service.entertain.IAuditionService;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 오디션 일정 삭제 컨트롤러(관리자)
+ * @author 이수진
+ */
+@Controller
+@Slf4j
+@RequestMapping("/entertain/audition")
+public class AuditionNoticeDeleteController {
+	// 완전한 삭제가 아닌 삭제여부를 N -> Y로 업데이트
+	
+	@Inject
+	private IAuditionService auditionService;
+	
+}

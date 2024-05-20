@@ -1,0 +1,20 @@
+package kr.or.ddit.vo.goods;
+
+import lombok.Data;
+
+@Data
+public class GoodsVO {
+	 private int goodsNo;
+	 private String goodsName;
+	 private int goodsPrice;
+	 private int goodsQuantity;
+	 private String goodsRegdate;
+	 private String goodsMembership;
+	 private String goodsArtist;
+	 private String goodsDisplay;
+	 private String goodsThumbnail;
+	 private int goodsLimit;
+	 private int goodsAutocndtn;
+	 private int goodsAutobuycount;
+	 private String gcId;
+}

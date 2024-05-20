@@ -1,0 +1,6 @@
+package kr.or.ddit.mapper.common;
+
+public interface IAdminMapper {
+	public int selectTodayRegister();
+	public int selectYesterdayRegister();
+}

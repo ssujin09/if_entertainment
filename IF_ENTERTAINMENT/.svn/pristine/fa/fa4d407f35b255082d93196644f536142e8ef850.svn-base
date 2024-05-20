@@ -1,0 +1,139 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <div class="gap no-gap">
+        <div class="inner-bg">
+            <div class="element-title">
+                <h2>상품등록</h2>
+            </div>
+            <div class="add-prod-from">
+                <div class="row row-addproduct">
+                    <div class="col-md-4">
+                        <div class="addproduct-title">
+                            <span>카테고리 (대분류)</span>
+                        </div>
+                        <select>
+                            <option value="">아티스트 선택</option>
+                            <option value="">option one</option>
+                            <option value="">option two</option>
+                            <option value="">option three</option>
+                            <option value="">option four</option>
+                            <option value="">option five</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="addproduct-title">
+                            <span>카테고리 (중분류)</span>
+                        </div>
+                        <select>
+                            <option value="">제품군 선택</option>
+                            <option value="">option one</option>
+                            <option value="">option two</option>
+                            <option value="">option three</option>
+                            <option value="">option four</option>
+                            <option value="">option five</option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="addproduct-title">
+                            <span>상품명</span>
+                        </div>
+                        <input type="text">
+                    </div>
+                    <div class="col-md-8">
+                    	<div class="addproduct-title">
+                        	<span>가격</span>
+                        </div>
+                        <!-- <span class="input-group-addon"><i class="fa fa-dollar"></i></span> -->
+                        <input class="form-control" name="email" type="text">
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="addproduct-title">
+                            <span>상품 태그</span>
+                        </div>
+                        <div class="tag-box">
+	                        <div class="tag-checkbox">
+		                        <span>신상품</span>
+		                        <input type="checkbox" name="status">
+		                    </div>
+		                    <div class="tag-checkbox">
+		                        <span>단독판매</span>
+		                        <input type="checkbox" name="status">
+	                        </div>
+	                        <div class="tag-checkbox">
+		                        <span>예약판매</span>
+		                        <input type="checkbox" name="status">
+	                        </div>
+	                        <div class="tag-checkbox">
+		                        <span>멤버십 전용</span>
+		                        <input type="checkbox" name="status">
+	                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 approv-reject">
+                        <div class="addproduct-title">
+                            <span>진열 여부</span>
+                        </div>
+                        <a class="approve active" href="#" title="">진열</a>
+                        <a class="rejected" href="#" title="">미진열</a>
+                    </div>
+
+                    <div class="col-md-8">
+                    	<div class="addproduct-title">
+                        	<span>수량</span>
+                        </div>
+                        <input class="form-control" name="email" type="text">
+                    </div>
+
+                    
+                    <div class="col-md-8">
+                   		<div class="addproduct-title">
+                        	<span>구매 제한</span>
+                        </div>
+                        <div class="form-balju">
+	                        <p style="display: inline">1인 당</p>
+	                        <input class="form-control" name="email" style="width: 10%" type="text">
+	                        <p style="display: inline">개</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                   		<div class="addproduct-title">
+                        	<span>자동발주</span>
+                        </div>
+                        <div class="form-balju">
+	                        <input class="form-control" name="email" style="width: 10%" type="text">
+	                        <p style="display: inline">개 이하일때</p>
+	                        <input class="form-control" name="email" style="width: 10%" type="text">
+	                        <p style="display: inline">개 주문</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                    	<div class="addproduct-title">
+                        	<span>제품 썸네일</span>
+                        </div>
+                        <label class="fileContainer"> <span>upload</span>
+                            <input type="file" />
+                        </label>
+                    </div>
+
+                    <div class="col-md-8">
+                    	<div class="addproduct-title">
+                        	<span>제품 상세 이미지</span>
+                        </div>
+                        <label class="fileContainer"> <span>upload</span>
+                            <input type="file" multiple="multiple" />
+                        </label>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="buttonz">
+                            <button type="submit">등록하기</button>
+                            <button type="submit">등록취소</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

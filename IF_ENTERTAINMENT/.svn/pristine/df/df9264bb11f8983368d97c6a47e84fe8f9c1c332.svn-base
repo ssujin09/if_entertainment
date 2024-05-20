@@ -1,0 +1,15 @@
+package kr.or.ddit.service.impl.entertain;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.mapper.entertain.IArtistMapper;
+import kr.or.ddit.service.entertain.IArtistService;
+
+@Service
+public class ArtistServiceImpl implements IArtistService {
+
+	@Inject
+	private IArtistMapper artistMapper;
+}
